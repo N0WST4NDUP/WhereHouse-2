@@ -23,26 +23,25 @@ window.onload = function () {
     menu_gu_icon.addEventListener("click", () => clickMenu(2));
     menu_detail_icon.addEventListener("click", () => clickMenu(3));
     menu_board_icon.addEventListener("click", () => clickMenu(4));
-	
-	// 각 아이콘 클릭 시 화면 전환, 순서대로 거주지 추천, 지역구 지도, 상세 지도, 게시판
+
     function clickMenu(sel) {
-   		menu_suggest_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
         menu_gu_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
         menu_detail_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
+        menu_suggest_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
         menu_board_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
 
         if (sel === 1) {
             menu_suggest_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            iframeSection.src = "/wherehouse/page/houserec";
+            iframeSection.src = "house_rec.jsp";
         } else if (sel === 2) {
             menu_gu_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            iframeSection.src = "/wherehouse/page/gumap";
+            iframeSection.src = "gu_map.jsp";
         } else if (sel === 3) {
             menu_detail_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            iframeSection.src = "/wherehouse/informationPage.jsp";
+            iframeSection.src = "informationPage.jsp";
         } else if (sel === 4) {
             menu_board_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            iframeSection.src = "/wherehouse/page/list";			// 처음 호출되는 요청은 매개 변수 없이 요청.
+            iframeSection.src = "list.do";			// 처음 호출되는 요청은 매개 변수 없이 요청.
         }
     }
 }
@@ -57,17 +56,15 @@ function initIframe() {
 
     if (iframe_target === "house_rec") {
         menu_suggest_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-        iframe_target = "/houserec";
     } else if (iframe_target === "gu_map") {
         menu_gu_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-        iframe_target = "/gumap";
     } else if (iframe_target === "detail_map") {
         menu_detail_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-        iframe_target = "/informationPage";
+        iframe_target = "informationPage";
     } else if (iframe_target === "list") {
         menu_gu_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-          iframe_target = "/list"
     }
-    iframeSection.src = "../page" + iframe_target; 				// 스프링 수정, iframeSection.src = iframe_target + ".jsp";
+    iframeSection.src = iframe_target + ".jsp";
     console.log(iframe_target);
 }
+
