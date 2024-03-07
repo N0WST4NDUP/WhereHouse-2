@@ -35,7 +35,13 @@ public class PageResponseController  {
 		return "recommand/gu_map";
 	}
 	
-	/* main.jsp 에서 gu_map.jsp 구성 */
+	/* main.jsp 에서 imformation.jsp 구성 */
+	@RequestMapping(value="/list", method=RequestMethod.GET)
+	public String pageImformation() {
+		return "recommand/gu_map";
+	}
+	
+	/* main.jsp 에서 board.jsp 구성 */
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String pageList() {
 		return "recommand/gu_map";

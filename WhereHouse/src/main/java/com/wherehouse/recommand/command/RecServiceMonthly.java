@@ -19,7 +19,7 @@ public class RecServiceMonthly implements IRecCommand{
 	@Override
 	public List<RecServiceDto> execute(Map<String, String> requestAjax) {
 		
-		List<RecServiceDto> RecServiceResult = RecServiceEmpRepository.chooseCharterRec(Integer.parseInt(requestAjax.get("charter_avg")), Integer.parseInt(requestAjax.get("safe_score")),  Integer.parseInt(requestAjax.get("cvt_score")));
+		List<RecServiceDto> RecServiceResult = RecServiceEmpRepository.chooseMonthlyRec(Integer.parseInt(requestAjax.get("deposit_avg")), Integer.parseInt(requestAjax.get("monthly_avg")),  Integer.parseInt(requestAjax.get("safe_score")), Integer.parseInt(requestAjax.get("cvt_score")));
 		return RecServiceResult;
 	}
 }

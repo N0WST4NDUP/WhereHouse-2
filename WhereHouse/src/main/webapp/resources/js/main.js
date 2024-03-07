@@ -24,7 +24,7 @@ window.onload = function () {
     menu_detail_icon.addEventListener("click", () => clickMenu(3));
     menu_board_icon.addEventListener("click", () => clickMenu(4));
 	
-	// 각 아이콘 클릭 시 화면 전환, 순서대로 거주지 추천, 지역구 지도, 상세 지도, 게시판
+	// 각 아이콘 클릭 시 화면 전환, 순서대로 거주지 추천, 지역구 지도, 상세 지도, 게시판을 클릭하여 스프링에 요청
     function clickMenu(sel) {
    		menu_suggest_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
         menu_gu_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
@@ -39,7 +39,7 @@ window.onload = function () {
             iframeSection.src = "/wherehouse/page/gumap";
         } else if (sel === 3) {
             menu_detail_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            iframeSection.src = "/wherehouse/informationPage.jsp";
+            iframeSection.src = "/wherehouse/page/informationPage.jsp";
         } else if (sel === 4) {
             menu_board_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
             iframeSection.src = "/wherehouse/page/list";			// 처음 호출되는 요청은 매개 변수 없이 요청.

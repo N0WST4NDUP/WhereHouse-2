@@ -138,7 +138,7 @@
                 </div>
                 <!-- 캐러셀 == -->
             </div>
-            <div id="logo-img"><img src="images/home_icon.png" alt=""></div>
+            <div id="logo-img"><img src="../images/home_icon.png" alt=""></div>
         </aside>
     </div>
 

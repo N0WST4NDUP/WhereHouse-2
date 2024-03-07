@@ -40,21 +40,24 @@ public class RecServiceController {
 	public @ResponseBody List<RecServiceDto> ControllerRecServiceCharter(@RequestBody Map<String, String>requestAjax) {
 		System.out.println("/charter.do 메소드 실행!");
 		
-		System.out.println("requestAjax : " + requestAjax);/* 데이터 정상적 input 확인. */
-		
-		List<RecServiceDto> RecServiceResult = recServiceCharter.execute(requestAjax);			/* ServiceBean으로 분기하여 작업 */
-		
-		return RecServiceResult;
+		if(requestAjax.get("charter_avg").equals("")) {
+			return null;
+		} else {
+			List<RecServiceDto> RecServiceResult = recServiceCharter.execute(requestAjax);			/* ServiceBean으로 분기하여 작업 */
+			return RecServiceResult;
+		}
 	}
 	
 	/* 월세 요청 처리 */
 	@RequestMapping(value="/monthly", method=RequestMethod.POST)
 	public @ResponseBody List<RecServiceDto> ControllerRecServiceMothly(@RequestBody Map<String, String>requestAjax) {	
-		
 		System.out.println("/monthly 메소드 실행 !");
 		
-		List<RecServiceDto> RecServiceResult =recServiceMonthly.execute(requestAjax);		/* ServiceBean으로 분기하여 작업 */
-		
-		return RecServiceResult;
+		if(requestAjax.get("deposit_avg").equals("")) {
+			return null;
+		} else {
+			List<RecServiceDto> RecServiceResult = recServiceMonthly.execute(requestAjax);		/* ServiceBean으로 분기하여 작업 */
+			return RecServiceResult;
+		}
 	}
 }
