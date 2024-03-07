@@ -32,18 +32,20 @@ public class PageResponseController  {
 	/* main.jsp 에서 gu_map.jsp 구성 */
 	@RequestMapping(value="/gumap", method=RequestMethod.GET)
 	public String pageGumap() {
+		System.out.println(("pageGumap 메소드 실행!"));
 		return "recommand/gu_map";
 	}
 	
 	/* main.jsp 에서 information.jsp 구성 */
 	@RequestMapping(value="/information", method=RequestMethod.GET)
-	public String pageImformation() {
-		return "recommand/gu_map";
+	public String pageInformation() {
+		System.out.println("pagecontroller /information 요청!");
+		return "information/informationPage";
 	}
 	
 	/* main.jsp 에서 board.jsp 구성 */
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String pageList() {
-		return "recommand/gu_map";
+		return "recommand/list";
 	}
 }
