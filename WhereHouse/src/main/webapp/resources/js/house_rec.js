@@ -493,7 +493,7 @@ function showResult() {
 
     /* 월세 관련 요청 */
     $.ajax({
-        url: '/RecServiceController/monthly',
+        url: '../RecServiceController/monthly',
         type: 'POST',						/* 전송 TYPE : TEXT */
         contentType: 'application/json',	/* JSON 데이터 전송 */
         data : JSON.stringify({
@@ -515,7 +515,7 @@ function showResult() {
 
     /* 전세 관련 요청 */
     $.ajax({
-        url: '/RecServiceController/charter',
+        url: '../RecServiceController/charter',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({

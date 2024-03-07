@@ -224,7 +224,7 @@ function initInfo(selected_name) {
     }
 
     /* 핫플레이스를 스프링에 맞게 코드 변경. */
-    var imgPath = "/imges/hotPlace/" + selected_name;
+    var imgPath = "../imges/" + selected_name;
     for (var i = 0; i < guInfo.length; i++) {
 
         if (guInfo[i].name === selected_name) {

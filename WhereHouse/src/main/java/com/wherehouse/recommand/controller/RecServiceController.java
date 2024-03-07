@@ -49,18 +49,12 @@ public class RecServiceController {
 	
 	/* 월세 요청 처리 */
 	@RequestMapping(value="/monthly", method=RequestMethod.POST)
-	public @ResponseBody String ControllerRecServiceMothly(@RequestBody Map<String, String>requestAjax) {
+	public @ResponseBody List<RecServiceDto> ControllerRecServiceMothly(@RequestBody Map<String, String>requestAjax) {	
 		
-		System.out.println("월세 요청 처리 시작!");
+		System.out.println("/monthly 메소드 실행 !");
 		
 		List<RecServiceDto> RecServiceResult =recServiceMonthly.execute(requestAjax);		/* ServiceBean으로 분기하여 작업 */
-		ObjectMapper mapper = new ObjectMapper();
 		
-		String json = null;
-		
-		try {
-			json = mapper.writeValueAsString(RecServiceResult);
-		} catch (JsonProcessingException e) { e.printStackTrace(); };
-		return json;
+		return RecServiceResult;
 	}
 }
