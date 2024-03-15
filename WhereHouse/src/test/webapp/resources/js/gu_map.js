@@ -224,14 +224,20 @@ function initInfo(selected_name) {
     }
 
     /* 핫플레이스를 스프링에 맞게 코드 변경. */
-    var imgPath = "/imges/hotPlace/" + selected_name;
+    var imgPath = "../images/hotPlace/" + selected_name + "/img";				// selected_name : 강남구, 강서구 ...
+    console.log("imgPath");
+    console.log(imgPath);
     for (var i = 0; i < guInfo.length; i++) {
 
         if (guInfo[i].name === selected_name) {
 
             for (var j = 1; j <= 3; j++) {
 
-                document.getElementById("carousel-img" + j).src = imgPath + j;    // /imges/hotPlace/1..2..3 으로 요청
+                document.getElementById("carousel-img" + j).src = imgPath + j + ".jpg";    	// 현재 디렉토리의 상대경로를 기준으로 /wherehouse/images/이미지 이름.을 찾는다.
+                /* 디버그 */
+                	console.log("imgPath");
+                	console.log(imgPath);
+                /* 디버그 */
                 document.getElementById("carousel-caption" + j).innerText = guInfo[i].place_name[j - 1];
             }
         }

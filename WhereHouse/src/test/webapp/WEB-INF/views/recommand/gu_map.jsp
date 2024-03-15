@@ -6,11 +6,11 @@
 <meta charset="UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-    <script src="/json/mapData.json" type="text/javascript"></script>
+    <script src="../json/mapData.json" type="text/javascript"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4c3c68c349cd485fe2feeb1800479027">
     </script>
     <script src="https://kit.fontawesome.com/09b067fdc5.js" crossorigin="anonymous"></script>
@@ -138,7 +138,7 @@
                 </div>
                 <!-- 캐러셀 == -->
             </div>
-            <div id="logo-img"><img src="images/home_icon.png" alt=""></div>
+            <div id="logo-img"><img src="../images/home_icon.png" alt=""></div>
         </aside>
     </div>
 

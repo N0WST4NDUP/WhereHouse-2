@@ -19,9 +19,9 @@ window.onload = function () {			// HTML 페이지가 처음 로드되는 시점�
 
     // 구 선택에 따른 이벤트
     var selectGu = document.getElementById("gu_select");				// 지역구 선택 select 태그
-    selectGu.addEventListener("change", () => {							// Select 태그 내 option 이 바뀌면 실행되는 이벤트.
-        var selected_name = $("#gu_select option:selected").val(); 		// jquery 사용, select 태그 내 option 태그 값 가져오기.(선택 지역 정보) 
-        initInfo(selected_name);				// 핫플레이스 정보 제공 함수.
+    selectGu.addEventListener("change", () => {									// Select 태그 내 option 이 바뀌면 실행되는 이벤트.
+        var selected_name = $("#gu_select option:selected").val(); 				// jquery 사용, select 태그 내 option 태그 값 가져오기.(선택 지역 정보) 
+        initInfo(selected_name);														// 핫플레이스 정보 제공 함수.
     });
 
     // json 파싱 및 전처리
@@ -72,7 +72,7 @@ window.onload = function () {			// HTML 페이지가 처음 로드되는 시점�
         kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
             var content = '<div class="info">'
                 + '<div id="info_close_wrap">'
-                + '<img src="images/closeBtn.svg" alt="" srcset="" id="info_close_btn" onclick="infoClose()"></div>'
+                + '<img src="/wherehouse/images/closeBtn.svg" alt="" srcset="" id="info_close_btn" onclick="infoClose()"></div>'
                 + '<div class="info_title">' + population.name + '</div><hr>'
                 + '<div class="info_rank">'
                 + '<div id="info_price_rank">'

@@ -67,7 +67,7 @@ function initIframe() {
         iframe_target = "/wherehouse/information";
     } else if (iframe_target === "list") {
         menu_gu_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-          iframe_target = "/wherehouse/page/list"
+          iframe_target = "/wherehouse/page/list"		// 이 요청 실행 시 게시글 전체 목록을 페이지 네이션을 실행함.
     }
     iframeSection.src = iframe_target; 				// 스프링 수정, iframeSection.src = iframe_target + ".jsp";
     console.log(iframe_target);
