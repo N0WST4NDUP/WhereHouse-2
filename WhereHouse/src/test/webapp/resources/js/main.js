@@ -24,13 +24,14 @@ window.onload = function () {
     menu_detail_icon.addEventListener("click", () => clickMenu(3));
     menu_board_icon.addEventListener("click", () => clickMenu(4));
 	
-	// 각 아이콘 클릭 시 화면 전환, 순서대로 거주지 추천, 지역구 지도, 상세 지도, 게시판
+	// 각 아이콘 클릭 시 화면 전환, 순서대로 거주지 추천, 지역구 지도, 상세 지도, 게시판을 클릭하여 스프링에 요청
     function clickMenu(sel) {
    		menu_suggest_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
         menu_gu_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
         menu_detail_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
         menu_board_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
 
+		/* iframeSection.src 변경 : src 속성이 변경되면 브라우저가 해당 요청을 서버에게 전달하고 서프링에게 전달되어 요청을 처리한다. */
         if (sel === 1) {
             menu_suggest_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
             iframeSection.src = "/wherehouse/page/houserec";
@@ -39,7 +40,7 @@ window.onload = function () {
             iframeSection.src = "/wherehouse/page/gumap";
         } else if (sel === 3) {
             menu_detail_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            iframeSection.src = "/wherehouse/informationPage.jsp";
+            iframeSection.src = "/wherehouse/information";
         } else if (sel === 4) {
             menu_board_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
             iframeSection.src = "/wherehouse/page/list";			// 처음 호출되는 요청은 매개 변수 없이 요청.
@@ -57,17 +58,17 @@ function initIframe() {
 
     if (iframe_target === "house_rec") {
         menu_suggest_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-        iframe_target = "/houserec";
+        iframe_target = "/wherehouse/page/houserec";
     } else if (iframe_target === "gu_map") {
         menu_gu_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-        iframe_target = "/gumap";
+        iframe_target = "/wherehouse/page/gumap";
     } else if (iframe_target === "detail_map") {
         menu_detail_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-        iframe_target = "/informationPage";
+        iframe_target = "/wherehouse/information";
     } else if (iframe_target === "list") {
         menu_gu_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-          iframe_target = "/list"
+          iframe_target = "/wherehouse/page/list"		// 이 요청 실행 시 게시글 전체 목록을 페이지 네이션을 실행함.
     }
-    iframeSection.src = "../page" + iframe_target; 				// 스프링 수정, iframeSection.src = iframe_target + ".jsp";
+    iframeSection.src = iframe_target; 				// 스프링 수정, iframeSection.src = iframe_target + ".jsp";
     console.log(iframe_target);
 }

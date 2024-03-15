@@ -11,7 +11,5 @@ function writedo() {
         alert("내용을 입력 해주세요.");
         return;
     }
-
     document.writefrm.submit();
-
 }

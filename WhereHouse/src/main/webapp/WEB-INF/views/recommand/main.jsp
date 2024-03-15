@@ -14,7 +14,7 @@
         <div id="menu">
             <div id="menu_home">
                 <div id="menu_home_icon">
-                    <img src="../images/home_icon.png" alt="">
+                    <a href="/wherehouse" ><img src="../images/home_icon.png" alt=""></a>		<!-- 별도 스프링 컨트롤러 거치치 않고 바로 컨텍스트 요청 실행. -->
                 </div>
                 <hr id="menu_division">
             </div>

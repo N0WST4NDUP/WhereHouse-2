@@ -3,7 +3,7 @@
     <% String nickname=(String) session.getAttribute("nickname"); %>
 
         <% if(session.getAttribute("validMem") != null) {%>
-            <jsp:forward page="loginSuccess.jsp" />
+            <jsp:forward page="/loginSuccess" />
             <% } %>
 
                 <!DOCTYPE html>
@@ -40,7 +40,7 @@
                     <header>
                         <nav class="navbar navbar-expand-lg fixed-top bg-light border-bottom">
                             <div class="container-fluid">
-                                <a id="logo" class="navbar-brand ms-4 py-3" href="/index.jsp">Where House</a>
+                                <a id="logo" class="navbar-brand ms-4 py-3" href="/wherehouse">Where House</a>	<!-- 별도 스프링 컨트롤러 거치치 않고 바로 컨텍스트 요청 실행. -->
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
                                     aria-label="Toggle navigation">
@@ -62,42 +62,33 @@
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-end me-4 text-end"
                                                 id="nav_btn_gu_map_dropdown">
-                                                <li><a class="dropdown-item nav_choose" href="/wherehouse/page/]main" id="gu_btn">지역구
-                                                        지도</a>
+                                                <li><a class="dropdown-item nav_choose" href="./page/main" id="gu_btn">지역구 지도</a>
                                                 </li>
-                                                <li><a class="dropdown-item nav_choose" href="/wherehouse/page/]main"
-                                                        id="detail_btn">상세
-                                                        지도</a>
+                                                <li><a class="dropdown-item nav_choose" href="./page/main" id="detail_btn">상세 지도</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class=" nav-link dropdown-toggle me-5" id="nav_btn_data_script" href="/#"
-                                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                데이터 분석
-                                            </a>
-                                            <ul class="dropdown-menu me-3 dropdown-menu-end text-end nav_btn_house_rec_dropdown"
-                                                id="">
-                                                <li><a class="dropdown-item nav_choose" href="description.html">분석 적용 방식
-                                                        페이지</a>
-                                                </li>
+                                            <a class=" nav-link dropdown-toggle me-5" id="nav_btn_data_script" href="/wherehouse/page/reinfo" role="button" data-bs-toggle="dropdown" aria-expanded="false">데이터 분석</a>
+                                            <ul class="dropdown-menu me-3 dropdown-menu-end text-end nav_btn_house_rec_dropdown" id="">
+                                                <li><a class="dropdown-item nav_choose" href="/wherehouse/page/reinfo">분석 적용 방식 페이지</a></li>
                                                 <hr id="navbar_hr">
                                                 <li><a class="dropdown-item nav_choose"
-                                                        href="description.html#first_page">생활 안전
+                                                        href="/wherehouse/page/reinfo#first_page">생활 안전
                                                         관련</a></li>
                                                 <li><a class="dropdown-item nav_choose"
-                                                        href="description.html#second_page">생활
+                                                        href="/wherehouse/page/reinfo#second_page">생활
                                                         편의
                                                         관련</a></li>
                                                 <li><a class="dropdown-item nav_choose"
-                                                        href="description.html#third_page">가격
+                                                        href="/wherehouse/page/reinfo#third_page">가격
                                                         관련</a></li>
                                                 <li><a class="dropdown-item nav_choose"
-                                                        href="description.html#fourth_page">추천
+                                                        href="/wherehouse/page/reinfo#fourth_page">추천
                                                         결과
                                                         관련</a></li>
                                                 <li><a class="dropdown-item nav_choose"
-                                                        href="description.html#fifth_page">인구
+                                                        href="/wherehouse/page/reinfo#fifth_page">인구
                                                         밀집도
                                                         관련</a></li>
                                             </ul>
@@ -111,10 +102,10 @@
                                             <ul class="dropdown-menu me-2 dropdown-menu-end text-end nav_btn_house_rec_dropdown"
                                                 id="">
                                                 <li><a class="dropdown-item nav_choose nav_item"
-                                                        href="login.jsp">로그인</a>
+                                                        href="./page/login">로그인</a>
                                                 </li>
                                                 <li><a class="dropdown-item nav_choose nav_item"
-                                                        href="join.jsp">회원가입</a>
+                                                        href="./page/join">회원가입</a>
                                                 </li>
                                             </ul>
                                         </li>

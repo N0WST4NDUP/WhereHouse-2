@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.wherehouse.recommand.model.RecServiceDto;
+import com.wherehouse.recommand.model.RecServiceVO;
 
 @Repository
 public class RecServiceEmpRepository implements IRecServiceEmpRepository {
@@ -18,9 +18,9 @@ public class RecServiceEmpRepository implements IRecServiceEmpRepository {
 	JdbcTemplate jdbcTemplate;
 	
 	@Override
-	public List<RecServiceDto> chooseCharterRec(int inputData, int safe, int cvt) {							/* 전세 요청 담당 */
+	public List<RecServiceVO> chooseCharterRec(int inputData, int safe, int cvt) {							/* 전세 요청 담당 */
 		
-		List<RecServiceDto> recServiceResult;
+		List<RecServiceVO> recServiceResult;
 		
 		String query = "";
 		
@@ -58,9 +58,9 @@ public class RecServiceEmpRepository implements IRecServiceEmpRepository {
 	}
 
 	@Override
-	public List<RecServiceDto> chooseMonthlyRec(int deposit, int monthly, int safe, int cvt) {			/* 월세 요청 담당 */		
+	public List<RecServiceVO> chooseMonthlyRec(int deposit, int monthly, int safe, int cvt) {			/* 월세 요청 담당 */		
 		
-		List<RecServiceDto> RecServiceResult;
+		List<RecServiceVO> RecServiceResult;
 		String query = "";
 		
 		if(safe>cvt)	{
@@ -82,12 +82,12 @@ public class RecServiceEmpRepository implements IRecServiceEmpRepository {
 		return RecServiceResult;
 	}
 	
-	private class EmpMapper implements RowMapper<RecServiceDto>{			/* jdbcTemplate 에서 가져올 RowMapper 구현 클래스 */
+	private class EmpMapper implements RowMapper<RecServiceVO>{			/* jdbcTemplate 에서 가져올 RowMapper 구현 클래스 */
 
 		@Override
-		public RecServiceDto mapRow(ResultSet rs, int rowNum) throws SQLException {
+		public RecServiceVO mapRow(ResultSet rs, int rowNum) throws SQLException {
 				
-			RecServiceDto dto = new RecServiceDto();
+			RecServiceVO dto = new RecServiceVO();
 			dto.setGu_id(rs.getInt("gu_id"));
             dto.setGu_name(rs.getString("gu_name"));	
             dto.setCvt_score(rs.getInt("cvt_score"));

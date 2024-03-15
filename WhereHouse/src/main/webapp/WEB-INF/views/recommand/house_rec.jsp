@@ -13,12 +13,12 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4c3c68c349cd485fe2feeb1800479027">
     </script>
     <script src="https://kit.fontawesome.com/09b067fdc5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/house_rec.css">
-    <link rel="stylesheet" href="../css/rec_graph.css?ver=123">
-    <link rel="stylesheet" href="../css/gu_main_map.css">
-    <link rel="stylesheet" href="../css/rec_info.css">
-    <link rel="stylesheet" href="../css/comp_modal.css">
-    <script src="../js/house_rec.js"></script>
+    <link rel="stylesheet" href="/wherehouse/css/house_rec.css">
+    <link rel="stylesheet" href="/wherehouse/css/rec_graph.css?ver=123">
+    <link rel="stylesheet" href="/wherehouse/css/gu_main_map.css">
+    <link rel="stylesheet" href="/wherehouse/css/rec_info.css">
+    <link rel="stylesheet" href="/wherehouse/css/comp_modal.css">
+    <script src="/wherehouse/js/house_rec.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>

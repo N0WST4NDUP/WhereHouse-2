@@ -493,7 +493,7 @@ function showResult() {
 
     /* 월세 관련 요청 */
     $.ajax({
-        url: '/RecServiceController/monthly',
+        url: '../RecServiceController/monthly',
         type: 'POST',						/* 전송 TYPE : TEXT */
         contentType: 'application/json',	/* JSON 데이터 전송 */
         data : JSON.stringify({
@@ -515,7 +515,7 @@ function showResult() {
 
     /* 전세 관련 요청 */
     $.ajax({
-        url: '/RecServiceController/charter',
+        url: '../RecServiceController/charter',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
@@ -523,9 +523,9 @@ function showResult() {
             safe_score: safe_score,			// 안전 점수 비중치
             cvt_score: cvt_score				// 편의 점수 비중치
         }),
-        success: function (data) {			/* 정상적인 응답 일 시 응답 데이터인 추천 거주지 지역구 데이터.
-        								    			(String으로 반환된 Json 데이터) */
-            displayCharter(data);				// 사용자가 데이터 입력 후 버튼 "추천결과확인" 버튼 눌러서 보여지는 거주치 추천 결과(지역구3개) 데이터를 section 내 보여지는 함수. 
+        success: function (data) {
+        	console.log(data);		
+            displayCharter(data);			// 사용자가 데이터 입력 후 버튼 "추천결과확인" 버튼 눌러서 보여지는 거주치 추천 결과(지역구3개)를 section 내 표현하는 함수. 
             showMap(data);
             chart(data);			// chart.js 그리기
             chart_update(data);
