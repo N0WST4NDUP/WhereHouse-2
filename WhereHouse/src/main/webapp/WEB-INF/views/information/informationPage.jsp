@@ -82,11 +82,11 @@
                     <div id="infoDivScore">그래프 점수</div>
                 </div>
             </ul>
-            <div class="option">
-                <!-- <div class="check_wrap"> -->
-                <a href="description.html#first_page" style="justify-content: left;">안전성 점수 산정 방식 <div>보러가기 =></div></a>
-                <a href="description.html#second_page" style="margin-left: 48px;">편의성 점수 산정 방식 <div>보러가기 =></div></a>
-                <!-- <input type="checkbox" id="check_btn" />
+            <!-- <div class="option">
+                <div class="check_wrap">
+                <a href="/wherehouse/page/reinfo#first_page" style="justify-content: left;">안전성 점수 산정 방식 <div>보러가기 =></div></a>
+                <a href="/wherehouse/page/reinfo#second_page" style="margin-left: 48px;">편의성 점수 산정 방식 <div>보러가기 =></div></a>
+                <input type="checkbox" id="check_btn" />
                 </div>
                 <div class="dropdown">선호 유형
                     <select id="preference">
@@ -94,8 +94,8 @@
                         <option value="safty">안전</option>
                         <option value="conv">편의</option>
                     </select>
-                </div> -->
-            </div>
+                </div>
+            </div> -->
             <ul id="link">
             </ul>
         </div>
