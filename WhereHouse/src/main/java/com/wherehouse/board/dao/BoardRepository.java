@@ -16,7 +16,7 @@ import com.wherehouse.board.model.BoardVO;
 import com.wherehouse.board.model.CommentVO;
 
 @Repository
-public class BoardRepository implements IBoardRepository  {
+public class BoardRepository implements IBoardRepository {
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;

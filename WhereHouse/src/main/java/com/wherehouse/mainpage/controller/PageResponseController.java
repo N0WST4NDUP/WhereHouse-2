@@ -2,9 +2,6 @@ package com.wherehouse.mainpage.controller;
 
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,11 +18,6 @@ public class PageResponseController  {
 	
 	@Autowired
 	IBoardListService boardListService;
-	
-	@PostConstruct
-	public void init() {
-		System.out.println("컨트롤러 pageResponse 실행!!");
-	}
 	
 	/* main.jsp 페이지 제공 */
 	@RequestMapping(value="/main", method=RequestMethod.GET)
