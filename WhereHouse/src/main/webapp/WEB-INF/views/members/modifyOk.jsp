@@ -11,7 +11,7 @@
 	
 	<script language="javascript">
 		alert("정보 수정되었습니다.");
-		document.location.href="./loginSuccess"
+		document.location.href="/loginSuccess"
 	</script>
 <%
 	} else if(ri == 2 ){
